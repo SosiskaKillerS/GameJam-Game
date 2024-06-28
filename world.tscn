@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://dt7g65ib1jggy"]
+[gd_scene load_steps=2 format=3 uid="uid://dt7g65ib1jggy"]
+
+[ext_resource type="PackedScene" uid="uid://bkes233ks31ll" path="res://src/Player/Player.tscn" id="1_ekf3p"]
 
 [node name="World" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_ekf3p")]
+
+[editable path="CharacterBody2D"]
