@@ -1,7 +1,14 @@
 extends Area2D
 
-@export var speed = 1000
-@export var damage = 1 
+const MOVE_SPEED = 1000
 
+var direction : Vector2
+
+func set_bullet(position, targetPosition):
+	global_position = position 
+	direction = (targetPosition - position).normalized()
+	rotation_degrees = rad_to_deg(position.angle_to_point(targetPosition))
+	
+	
 func _physics_process(delta):
-	move_and_slide(Vector2.RIGHT * speed)
+	position == direction * MOVE_SPEED * delta
