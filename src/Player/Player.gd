@@ -8,8 +8,6 @@ func get_input():
 	
 	
 func _physics_process(delta):
-	if Input.is_action_pressed("ATTACK"):
-		$gun.shoot()
 	get_input()
 	move_and_slide()
 		
