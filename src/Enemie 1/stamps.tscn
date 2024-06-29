@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv6vbq1rtxr1n"]
+
+[ext_resource type="Texture2D" uid="uid://fjn2ail8g220" path="res://icon.svg" id="1_3iwv8"]
+[ext_resource type="Script" path="res://src/Enemie 1/stamps.gd" id="1_e3eu5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7hni"]
+radius = 84.0
+height = 176.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gyj24"]
+radius = 1191.54
+
+[node name="stamps" type="CharacterBody2D"]
+script = ExtResource("1_e3eu5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_3iwv8")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+offset_left = -59.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 63.0
+color = Color(1, 0, 1, 0.580392)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_o7hni")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_gyj24")
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
