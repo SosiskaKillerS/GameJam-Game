@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt7g65ib1jggy"]
+[gd_scene load_steps=2 format=3 uid="uid://dt7g65ib1jggy"]
 
 [ext_resource type="PackedScene" uid="uid://bkes233ks31ll" path="res://src/Player/Player.tscn" id="1_ekf3p"]
-[ext_resource type="PackedScene" uid="uid://b10xnjbupw0gj" path="res://src/Gun/gun.tscn" id="2_hexas"]
 
 [node name="World" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ekf3p")]
 
-[node name="gun" parent="CharacterBody2D" instance=ExtResource("2_hexas")]
-position = Vector2(22, 33)
-
 [editable path="CharacterBody2D"]
-[editable path="CharacterBody2D/gun"]
