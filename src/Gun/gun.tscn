@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b10xnjbupw0gj"]
+
+[ext_resource type="Texture2D" uid="uid://fjn2ail8g220" path="res://icon.svg" id="1_d4pvn"]
+[ext_resource type="Script" path="res://src/Gun/gun.gd" id="2_s2s54"]
+
+[node name="gun" type="Sprite2D"]
+scale = Vector2(0.52, 0.2)
+texture = ExtResource("1_d4pvn")
+script = ExtResource("2_s2s54")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(63.4615, 0)
+
+[node name="ShootSpeedTime" type="Timer" parent="."]
+
+[connection signal="timeout" from="ShootSpeedTime" to="." method="_on_shoot_speed_time_timeout"]
