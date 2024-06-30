@@ -1,9 +1,8 @@
 extends Sprite2D
 
-@export var Bullet : PackedScene
-var preloadBullet = preload("res://src/Bullet/bullet.tscn")
-@export var shoot_timer = 0.5 # переменная для хранения интервала между выстрелами в секундах
-@export var timer = 0 # переменная для отслеживания текущего времени таймера
+@export var Bullet = preload("res://src/Bullet/bullet.tscn")
+@export var shoot_timer = 0.3 
+@export var timer = 0 
 
 func shoot():
 	var b = Bullet.instantiate()
@@ -16,8 +15,8 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	if Input.is_action_pressed("SHOOT"):
-		timer += delta # увеличиваем таймер на текущий шаг времени
-		if timer >= shoot_timer: # проверяем, прошло ли достаточно времени с момента последнего выстрела
+		timer += delta 
+		if timer >= shoot_timer: 
 			shoot()
-			timer -= shoot_timer # сбрасываем таймер
+			timer -= shoot_timer 
 	

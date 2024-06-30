@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt7g65ib1jggy"]
+[gd_scene load_steps=5 format=3 uid="uid://dt7g65ib1jggy"]
 
 [ext_resource type="PackedScene" uid="uid://bkes233ks31ll" path="res://src/Player/Player.tscn" id="1_ekf3p"]
 [ext_resource type="PackedScene" uid="uid://ci0adju056xmf" path="res://src/gun/gun.tscn" id="2_10pk0"]
+[ext_resource type="PackedScene" uid="uid://c0bp3mydumkpq" path="res://src/Bullet/bullet.tscn" id="2_k7gnn"]
 [ext_resource type="PackedScene" uid="uid://dv6vbq1rtxr1n" path="res://src/Enemie 1/stamps.tscn" id="3_jf5vu"]
 
 [node name="World" type="Node2D"]
+
+[node name="bullet" parent="." instance=ExtResource("2_k7gnn")]
+position = Vector2(1129, 667)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ekf3p")]
 position = Vector2(1129, 667)
