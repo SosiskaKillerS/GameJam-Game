@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ljupyaby4j2"]
+
+[ext_resource type="Script" path="res://src/Player.gd" id="1_7mhwd"]
+[ext_resource type="Texture2D" uid="uid://dpau4f4o63kwt" path="res://sprites/MC.png" id="2_2neei"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8h3ah"]
+radius = 3.16228
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(1039, 566)
+script = ExtResource("1_7mhwd")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(3, 3)
+shape = SubResource("CircleShape2D_8h3ah")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(3, 3)
+scale = Vector2(-0.0129486, -0.00617791)
+zoom = Vector2(30, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(3, 3)
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("2_2neei")
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
