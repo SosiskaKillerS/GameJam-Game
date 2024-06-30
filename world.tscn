@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1ljupyaby4j2"]
+[gd_scene load_steps=22 format=3 uid="uid://b1ljupyaby4j2"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_7mhwd"]
 [ext_resource type="Texture2D" uid="uid://cwxetyiedtkd1" path="res://sprites/tilemap.png" id="1_qwjtk"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://blnehp62qisvo" path="res://sprites/MC_sprite10.png" id="11_5pqrb"]
 [ext_resource type="Texture2D" uid="uid://se7dynu0p6vs" path="res://sprites/MC_sprite11.png" id="12_4udnc"]
 [ext_resource type="Texture2D" uid="uid://0s7cjxxbe1gl" path="res://sprites/MC_sprite12.png" id="13_phe1d"]
+[ext_resource type="PackedScene" uid="uid://cfwc0vrdot360" path="res://enemyspawner.tscn" id="15_u3oou"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l7nwc"]
 texture = ExtResource("1_qwjtk")
@@ -187,6 +188,89 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3t8q"]
+texture = ExtResource("1_qwjtk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+4:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+2:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ie732"]
+sources/0 = SubResource("TileSetAtlasSource_g3t8q")
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -217,3 +301,13 @@ position = Vector2(3.87497, 2.87499)
 scale = Vector2(0.390622, 0.390622)
 sprite_frames = SubResource("SpriteFrames_6xasf")
 animation = &"walk0"
+
+[node name="TileMap2" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(0.3, 0.3)
+tile_set = SubResource("TileSet_ie732")
+format = 2
+layer_0/tile_data = PackedInt32Array(7471312, 131072, 0, 8192216, 393216, 0, 7602406, 131072, 0, 7340254, 131072, 0, 7995621, 393216, 0, 7799006, 131072, 0, 8257760, 131072, 0, 7995601, 131072, 0, 7602412, 262144, 0, 7405800, 393216, 0, 8126700, 393216, 0, 8257768, 393216, 0, 7471346, 262144, 0, 7864563, 131072, 0, 8126706, 393216, 0, 7471353, 393216, 0, 7340278, 393216, 0, 7930108, 131072, 0, 7864568, 262144, 0, 8126712, 262144, 0, 7471356, 131072, 0, 7405781, 262144, 0, 8192207, 131072, 0)
+
+[node name="enemyspawner" parent="." instance=ExtResource("15_u3oou")]
+position = Vector2(24, 0)
