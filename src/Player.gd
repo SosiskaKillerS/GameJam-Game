@@ -14,9 +14,13 @@ func _physics_process(delta):
 	move_and_slide()
 	var mouse = get_local_mouse_position()
 	var angle = snappedf(mouse.angle(), PI/4) / (PI/4)
+	angle = wrapi(int(angle),0,8)
+	
+	$AnimatedSprite2D.animation = "walk" + str(angle)
 	
 	if velocity.length() != 0:
-		$AnimationPlayer.play()
+		$AnimatedSprite2D.play("walk"+str(angle))
 	else:
-		$AnimationPlayer.stop()
-		
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 0
+
