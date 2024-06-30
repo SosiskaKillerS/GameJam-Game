@@ -6,6 +6,7 @@ var player = null
 @export var hp = 1500
 
 func _physics_process(delta):
+	add_to_group("mobs")
 	if player_chase:
 		position += (player.position-position)/speed
 

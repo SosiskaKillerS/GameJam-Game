@@ -2,8 +2,8 @@ extends Sprite2D
 
 @export var Bullet : PackedScene
 var preloadBullet = preload("res://src/Bullet/bullet.tscn")
-var shoot_timer = 0.5 # переменная для хранения интервала между выстрелами в секундах
-var timer = 0 # переменная для отслеживания текущего времени таймера
+@export var shoot_timer = 0.5 # переменная для хранения интервала между выстрелами в секундах
+@export var timer = 0 # переменная для отслеживания текущего времени таймера
 
 func shoot():
 	var b = Bullet.instantiate()
